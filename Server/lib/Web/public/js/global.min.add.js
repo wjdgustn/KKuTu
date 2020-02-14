@@ -24,7 +24,7 @@ if (location.search=='?server=1') {
 	else {
 		if (password!=null) {
 		    alert("GM 전용 서버 비밀번호가 틀렸습니다.")
-		    location.href="https://kkutu.hyonsu.com"
+		    location.href="https://kkutu.org"
 		}
 	}
 }
@@ -43,7 +43,7 @@ if (location.search=='?server=0') {
 // if (location.search=='?server=0') {
 	// password = prompt("현재 서버 점검 또는 테스트 중이므로 접속할 수 없습니다.\n관리자라면 접속 비밀번호를 입력해 주세요.")
 	// if (password==null) {
-		// location.href="https://kkutu.hyonsu.com"
+		// location.href="https://kkutu.org"
 	// }
 	// if (password==gmpassword) {
 	    // alert("인증에 성공하였습니다.")
@@ -51,7 +51,7 @@ if (location.search=='?server=0') {
 	// else {
 		// if (password!=null) {
 		    // alert("인증에 실패하여 접속할 수 없습니다.")
-		    // location.href="https://kkutu.hyonsu.com"
+		    // location.href="https://kkutu.org"
 		// }
 	// }
 // }
