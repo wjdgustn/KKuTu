@@ -37,10 +37,10 @@ html
 			meta(name='keywords', content=LANG['meta_keys'] || L('META_KEYS'))
 
 		block OpenGraph
-			meta(property='og:image', content=locals.ogImage || "http://JJo.kr/img/ogImage.png")
-			meta(property='og:url', content=locals.ogURL || "http://JJo.kr/")
-			meta(property='og:title', content=locals.ogTitle || "쪼롤 - League of Legends 정보 검색 사이트")
-			meta(property='og:description', content=locals.ogDescription || "롤 전적검색은 JJO.KR")
+			meta(property='og:image', content=locals.ogImage || "https://kkutu.org/img/trademark.png")
+			meta(property='og:url', content=locals.ogURL || "https://kkutu.org")
+			meta(property='og:title', content=locals.ogTitle || "이름 없는 끄투")
+			meta(property='og:description', content=locals.ogDescription || "끝말잇기를 즐겨보세요!")
 
 		+PageHead()
 			block Preload
@@ -52,7 +52,7 @@ html
 			+Menu()
 			div#global-notice
 				div#gn-content
-					include ../public/global_notice.html
+					include ../public/pc_notice.html
 				+Expl(L('GLOBAL_NOTICE'))
 			block Top
 		div#Jungle
@@ -68,7 +68,7 @@ html
 				if locals.as_pc
 					a(href='?')= L('AS_MOBILE')
 				br
-				a.bottom-contact(href='http://blog.jjo.kr/', target='_blank')= L('CREATOR')
-				a.bottom-contact(href='mailto:op@jjo.kr', target='_blank') Contact op@jjo.kr
+				//-a.bottom-contact(href='http://blog.jjo.kr/', target='_blank')= L('CREATOR')
+				//-a.bottom-contact(href='mailto:op@jjo.kr', target='_blank') Contact op@jjo.kr
 			div.bottom-legal!= L('GPL')
 			+separator(10)

@@ -1,0 +1,106 @@
+//
+	Rule the words! KKuTu Online
+	Copyright (C) 2017 JJoriping(op@jjo.kr)
+	Copyright (C) 2017-2018 KKuTu Korea(admin@kkutu.co.kr)
+	
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+doctype html
+html
+	head
+		title 끄투코리아 - #{locals.title}
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+		style(type="text/css").
+			@import url(https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css);
+			.left{
+				width:40%;
+				position:absolute;
+				top: 50%;
+				left:0;
+				transform: translate(0, -50%);
+			}
+			.right{
+				width:60%;
+				margin: 0;
+				position: absolute;
+				top: 50%;
+				right:0;
+				transform: translate(0, -50%);
+				margin-top:20px;
+			}
+			.errorImage{
+				width:300px; height:300px;
+				float:right;
+			}
+			.title{
+				font-size:50px;
+				margin-top:5px;
+			}
+			.description{
+				font-size:30px;
+				margin-top:5px;
+			}
+			.message{
+				font-size:20px;
+				margin-top:5px;
+			}
+			.back{
+				background-color:#fff;
+				border:3px solid #000;
+				width:250px;
+				height:70px;
+				font-size:30px;
+				margin-top:20px;
+			}
+			.bottom{
+				position:absolute;
+				bottom:0;
+				left: 50%;
+				transform: translate(-50%, 0);
+			}
+			.logo{
+				width:100px;
+			}
+		script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+		script.
+			$(document).ready(function(){
+				if($(".end_time").html()){
+					var end_time = new Date(parseInt($(".end_time").html()));
+					var o = {
+						year: 1900 + end_time.getYear(),
+						month: end_time.getMonth() + 1,
+						date: end_time.getDate(),
+						hour: end_time.getHours(),
+						minute: end_time.getMinutes(),
+						second: end_time.getSeconds()
+					};
+					$(".message").append("<br>기간:"+o.year+"년 "+o.month+"월 "+o.date+"일 "+o.hour+"시 "+o.minute+"분 까지");
+				}
+			});
+	body(style='font-family: "Nanum Barun Gothic", "Malgun Gothic", sans-serif;')
+		.left
+			img.errorImage(src=locals.DOMAIN+'/img/error/'+locals.img+'.png')
+		.right
+			.title #{locals.title}
+			.description #{locals.description}
+			.message #{locals.message}
+			-if(locals.end_time)
+				span.end_time(style="display:none;")
+			-if(locals.code==999)
+				button.back(onclick='location.href="//cafe.naver.com/kkutukorea";') 공식카페
+			-else
+				button.back(onclick='window.history.back();') ← 뒤로가기
+		.bottom
+			a(href='/')
+				img.logo(src=locals.DOMAIN+'/img/logo.png')

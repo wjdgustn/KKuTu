@@ -19,7 +19,7 @@
 	* Login 을 Passport 로 수행하기 위한 수정
 -
 	const MENU = [
-		{ key: 'HOME', href: "http://jjo.kr/" },
+		{ key: 'HOME', href: "https://kkutu.org" },
 		/*{ key: 'DB', sub: [
 			{ key: 'DB_CHAMP', href: "/db/champion" },
 			{ key: 'DB_ITEM', href: "/db/item" },
@@ -27,10 +27,17 @@
 			{ key: 'DB_MASTERY', href: "/db/mastery" }
 		]},*/
 		{ key: 'GAMES', sub: [
-			{ key: 'GAMES_KKUTU', href: "/" },
-			{ key: 'GAMES_FATES', href: "http://jjo.kr/game/fates" }
+			{ key: 'GAMES_KKUTU', href: "https://kkutu.org" },
+			{ key: 'AdminCloud', href: "http://cloud.hyonsu.com/cloud" },
+			{ key: 'AdminWiki', href: "http://wiki.hyonsu.com:90/w/FrontPage" },
 		]},
-		{ key: 'GALLERY', href: "http://jjo.kr/gallery" }
+		{ key: 'Community', sub: [
+			{ key: "DiscordServer", href: "https://discord.gg/HeQsjNj" },
+		]},
+		{ key: 'Contact', sub: [
+			{ key: "AdminDiscord", href: "javascript:alert('디스코드 정보 : @정현수#1234')" },
+			{ key: "AdminEmail", href: "mailto:admin@hyonsu.com" },
+		]}
 	];
 	const PUBLIC = locals.published;
 	
@@ -67,8 +74,6 @@ mixin Menu()
 					- for(j in MENU[i].sub)
 						div.menu-sub-btn(onclick='location.href = "'+MENU[i].sub[j].href+'";')!= L(MENU[i].sub[j].key)
 		div#quick-search
-			input#quick-search-tf(placeholder=L('QUICK_HOLDER'))
-			button#quick-search-btn!= L('QUICK_BTN')
 		div#account
 			span#profile= SESSION.profile ? JSON.stringify(SESSION.profile) : '{}'
 			div#account-info
@@ -78,12 +83,8 @@ mixin MMenu()
 		div.menu-btn(id='menu-item-GAMES')
 			+FA('bars')
 			+separator(10)
-			div.menu-sub-btn(onclick='location.href = "http://jjo.kr/";', style='margin: 7px 0px; height: 25px;')!= L('HOME')
-			div.menu-sub-btn(onclick='location.href = "http://kkutu.kr/";', style='margin: 7px 0px; height: 25px;')!= L('GAMES_KKUTU')
-			div.menu-sub-btn(onclick='location.href = "http://jjo.kr/gallery";', style='margin: 7px 0px; height: 25px;')!= L('GALLERY')
-		div#quick-search
-			input#quick-search-tf(placeholder=L('QUICK_HOLDER'))
-			button#quick-search-btn!= L('QUICK_BTN')
+			div.menu-sub-btn(onclick='location.href = "https://kkutu.hyonsu.com";', style='margin: 7px 0px; height: 25px;')!= L('HOME')
+			div.menu-sub-btn(onclick='location.href = "https://kkutu.hyonsu.com";', style='margin: 7px 0px; height: 25px;')!= L('GAMES_KKUTU')
 		div#account
 			span#profile= SESSION.profile ? JSON.stringify(SESSION.profile) : '{}'
 			div#account-info
@@ -130,7 +131,7 @@ mixin Expl(text, width)
 			h5= text
 
 mixin Product(id)
-	div(class=id+'Box Product')
+	div(class=id+'Box Product', style='display: ' + (id === 'AD' ? 'block' : 'none'))
 		h5.product-title!= L(id)
 		div.product-body
 			if block

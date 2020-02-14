@@ -42,8 +42,13 @@ block Middle
 			div.jjoDisplayBar(style='float: left; margin-top: -30px; width: 325px; height: 85px;')
 				button#game-start.jjo-display= L('gameStart')
 	div#menu-bar(style='float: left; margin: 10px 0px 10px calc(50% - 136px); width: 100%;')
-		a(target='_blank', href='//cafe.naver.com/sdbx', style='background-color: #63A95B;')= L('sandbox')
-		a(target='_blank', href='//blog.jjo.kr/', style='background-color: #4078DC;')= L('CREATOR')
+		//-a(target='_blank', href='//cafe.naver.com/sdbx', style='background-color: #63A95B;')= L('sandbox')
+		//-a(target='_blank', href='//blog.jjo.kr/', style='background-color: #4078DC;')= L('CREATOR')
+		if SESSION.admin
+			a(target='_blank', href='//kkutu.org/gwalli', style='background-color: #ff1100;')= '끄투 관리 페이지'
+			a(target='_blank', href='//kkutu.org/command.htm', style='background-color: #033dfc;')= '관리자 기능 도움'
+		if !SESSION.admin
+			a(target='_blank', href='//kkutu.org/help.htm', style='background-color: #37bf60;')= '끄투 소개'
 	div(style='float: left; margin-left: calc(50% - 160px);')
 		div.server-list-box
 			h3.server-list-title

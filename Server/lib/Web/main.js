@@ -98,14 +98,14 @@ Server.use((req, res, next) => {
 	}
 });
 //볕뉘 수정 끝
-/* use this if you want
+// use this if you want
 
 DDDoS = new DDDoS({
-	maxWeight: 6,
+	maxWeight: 30,
 	checkInterval: 10000,
 	rules: [{
 		regexp: "^/(cf|dict|gwalli)",
-		maxWeight: 20,
+		maxWeight: 30,
 		errorData: "429 Too Many Requests"
 	}, {
 		regexp: ".*",
@@ -115,7 +115,7 @@ DDDoS = new DDDoS({
 DDDoS.rules[0].logFunction = DDDoS.rules[1].logFunction = function(ip, path){
 	JLog.warn(`DoS from IP ${ip} on ${path}`);
 };
-Server.use(DDDoS.express());*/
+Server.use(DDDoS.express());
 
 WebInit.init(Server, true);
 DB.ready = function(){
@@ -159,7 +159,7 @@ Const.MAIN_PORTS.forEach(function(v, i){
 	} else {
 		protocol = 'ws';
 	}
-	gameServers[i] = new GameClient(KEY, `${protocol}://${GLOBAL.GAME_SERVER_HOST}:${v}/${KEY}`);
+	gameServers[i] = new GameClient(KEY, `${protocol}://127.0.0.2:${v}/${KEY}`);
 });
 function GameClient(id, url){
 	var my = this;
@@ -248,8 +248,8 @@ Server.get("/", function(req, res){
 			'KO_THEME': Const.KO_THEME,
 			'EN_THEME': Const.EN_THEME,
 			'IJP_EXCEPT': Const.IJP_EXCEPT,
-			'ogImage': "http://kkutu.kr/img/kkutu/logo.png",
-			'ogURL': "http://kkutu.kr/",
+			'ogImage': "https://kkutu.org/img/trademark.png",
+			'ogURL': "https://kkutu.org",
 			'ogTitle': "글자로 놀자! 끄투 온라인",
 			'ogDescription': "끝말잇기가 이렇게 박진감 넘치는 게임이었다니!"
 		});
@@ -269,4 +269,12 @@ Server.get("/servers", function(req, res){
 
 Server.get("/legal/:page", function(req, res){
 	page(req, res, "legal/"+req.params.page);
+});
+
+Server.get("/discord", function(request, response){
+	response.redirect("https://discord.gg/HeQsjNj");
+});
+
+Server.get("/sslpageinfo", function(req, res){
+	res.send('<h1>ssl.hyonsu.com은 hyonsu.com, kkutu.org에 사용되는 보안 인증서 발급시 표시되는 주소입니다.</h1><img src="/img/certimage.jpg">');
 });
