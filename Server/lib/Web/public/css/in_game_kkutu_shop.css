@@ -48,6 +48,26 @@
 .chat-item>.x-gm::before{ content: "[GM]"; color: #2F77D9; text-shadow: 0px 0px 2px #2AF; }
 .room-user-title>.x-gm::before{ content: "[GM]"; color: #2F77D9; text-shadow: 0px 0px 2px #2AF; }
 
+.x-yt .users-name::before{ content: "[YOUTUBE]"; color: #FF3333; text-shadow: 0px 0px 2px #2AF; }
+.chat-item>.x-yt::before{ content: "[YOUTUBE]"; color: #FF3333; text-shadow: 0px 0px 2px #2AF; }
+.room-user-title>.x-yt::before{ content: "[YOUTUBE]"; color: #FF3333; text-shadow: 0px 0px 2px #2AF; }
+
+.x-bot .users-name::before{ content: "[BOT]"; color: #43C227; text-shadow: 0px 0px 2px #2AF; }
+.chat-item>.x-bot::before{ content: "[BOT]"; color: #43C227; text-shadow: 0px 0px 2px #2AF; }
+.room-user-title>.x-bot::before{ content: "[BOT]"; color: #43C227; text-shadow: 0px 0px 2px #2AF; }
+
+.x-together .users-name::before{ content: "[제휴]"; color: #ff3399; text-shadow: 0px 0px 2px #2AF; }
+.chat-item>.x-together::before{ content: "[제휴]"; color: #ff3399; text-shadow: 0px 0px 2px #2AF; }
+.room-user-title>.x-together::before{ content: "[제휴]"; color: #ff3399; text-shadow: 0px 0px 2px #2AF; }
+
+.x-designer .users-name::before{ content: "[디자이너]"; color: #ff3399; text-shadow: 0px 0px 2px #2AF; }
+.chat-item>.x-designer::before{ content: "[디자이너]"; color: #ff3399; text-shadow: 0px 0px 2px #2AF; }
+.room-user-title>.x-designer::before{ content: "[디자이너]"; color: #ff3399; text-shadow: 0px 0px 2px #2AF; }
+
+.x-2020sul .users-name::before{ content: "[2020설날]"; color: #ffff00; text-shadow: 0px 0px 2px #2AF; }
+.chat-item>.x-2020sul::before{ content: "[2020설날]"; color: #ffff00; text-shadow: 0px 0px 2px #2AF; }
+.room-user-title>.x-2020sul::before{ content: "[2020설날]"; color: #ffff00; text-shadow: 0px 0px 2px #2AF; }
+
 .x-red_name{ color: #FF3333; }
 .x-orange_name{ color: #FFA533; }
 .x-green_name{ color: #43C227; }
