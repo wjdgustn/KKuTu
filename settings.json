@@ -1,6 +1,20 @@
-{
-	"server-name": "My KKuTu Server",
-	"web-num-cpu": 1,
-	"game-num-cpu": 1,
-	"game-num-inst": 1
+﻿{
+	"server-name": "이름 없는 끄투",
+	"web": {
+		"enabled": true,
+		"cpu": 1
+	},
+	"game": {
+		"enabled": true,
+		"cpu": 1,
+		"inst": 2
+	},
+	"log": {
+		"enabled": true,
+		"infopath": "D:\\KKuTu\\KKuTu-master\\Server\\lib\\data\\log\\%DATE%-info.log",
+		"exceptionpath": "D:\\KKuTu\\KKuTu-master\\Server\\lib\\data\\log\\%DATE%-exception.log",
+		"datepattern": "YYYY-MM-DD",
+		"maxsize": 50000000,
+		"maxfile": 1000
+	}
 }
