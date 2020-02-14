@@ -20,7 +20,7 @@ var GLOBAL = require("./sub/global.json");
 
 exports.KKUTU_MAX = 400;
 exports.MAIN_PORTS = GLOBAL.MAIN_PORTS;
-exports.TEST_PORT = 4040;
+exports.TEST_PORT = 30;
 exports.SPAM_CLEAR_DELAY = 1600;
 exports.SPAM_ADD_DELAY = 750;
 exports.SPAM_LIMIT = 7;
@@ -28,7 +28,7 @@ exports.BLOCKED_LENGTH = 10000;
 exports.KICK_BY_SPAM = 9;
 exports.MAX_OBSERVER = 4;
 exports.TESTER = GLOBAL.ADMIN.concat([
-	"Input tester id here"
+	"discord-348009971037765633"
 ]);
 exports.IS_SECURED = GLOBAL.IS_SECURED;
 exports.SSL_OPTIONS = GLOBAL.SSL_OPTIONS;
@@ -40,7 +40,9 @@ exports.OPTIONS = {
 	'prv': { name: "Proverb" },
 	'str': { name: "Strict" },
 	'k32': { name: "Sami" },
-	'no2': { name: "No2" }
+	'no2': { name: "No2" },
+	'ulm': { name: "Unlimited" },
+	'sht': { name: "Short" }
 };
 exports.MOREMI_PART = [ 'back', 'eye', 'mouth', 'shoes', 'clothes', 'head', 'lhand', 'rhand', 'front' ];
 exports.CATEGORIES = [ "all", "spec", "skin", "badge", "head", "eye", "mouth", "clothes", "hs", "back" ];
@@ -182,6 +184,22 @@ exports.RULE = {
 		ai: false,
 		big: true,
 		ewq: false
+	},
+	'KDG': { lang: "ko",
+		rule: "Drawing",
+		opts: [ "ijp", "sht", "ulm" ],
+		time: 1,
+		ai: false,
+		big: true,
+		ewq: true
+	},
+	'EDG': { lang: "en",
+		rule: "Drawing",
+		opts: [ "ijp", "sht", "ulm" ],
+		time: 1,
+		ai: false,
+		big: true,
+		ewq: true
 	}
 };
 exports.getPreScore = function(text, chain, tr){
@@ -195,7 +213,7 @@ exports.EXAMPLE_TITLE = {
 	'ko': "가나다라마바사아자차",
 	'en': "abcdefghij"
 };
-exports.INIT_SOUNDS = [ "ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ" ];
+exports.INIT_SOUNDS = [ "ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ", "○" ];
 exports.MISSION_ko = [ "가", "나", "다", "라", "마", "바", "사", "아", "자", "차", "카", "타", "파", "하" ];
 exports.MISSION_en = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
 
@@ -206,7 +224,7 @@ exports.KO_INJEONG = [
 	"MOB", "HYK", "CYP", "HRH", "STA", "OIJ",
 	"KGR", "ESB", "ELW", "OIM", "OVW", "NEX", /*"WOW",*/
 	"YRY", "KPO", "JLN", "JAN", "ZEL", "POK", "HAI",
-	"HSS", "KMV", "HDC", "HOS"
+	"HSS", "KMV", "HDC", "HOS", "JMC"
 ];
 exports.EN_INJEONG = [
 	"LOL"
