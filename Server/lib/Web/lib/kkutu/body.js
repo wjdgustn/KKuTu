@@ -2704,11 +2704,11 @@ function chat(profile, msg, from, timestamp){
 		$bar = ($data.room.gaming ? 2 : 0) + ($(".jjoriping").hasClass("cw") ? 1 : 0);
 		chatBalloon(msg, profile.id, $bar);
 	}
-	$stage.chat.append($item = $("<div>").addClass("chat-item")
-		.append($bar = $("<div>").addClass("chat-head ellipse").text(profile.title || profile.name))
-		.append($msg = $("<div>").addClass("chat-body").text(msg))
-		.append($("<div>").addClass("chat-stamp").text(time.toLocaleTimeString()))
-	);
+    $stage.chat.append($item = $("<div>").addClass("chat-item") 
+		.append($bar = $("<div>").addClass("chat-head ellipse").text(profile.title || profile.name)) 
+ 		.append($msg = equip["BDG"]==="b1_gm"?$("<div>").addClass("chat-body").html(msg):$("<div>").addClass("chat-body").text(msg)) 
+ 		.append($("<div>").addClass("chat-stamp").text(time.toLocaleTimeString())) 
+ 	);
 	if(timestamp) $bar.prepend($("<i>").addClass("fa fa-video-camera"));
 	$bar.on('click', function(e){
 		requestProfile(profile.id);
