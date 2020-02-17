@@ -41,8 +41,12 @@ block Subject
 	title= L('title')
 	
 	//- 권한 검사
-	//if !SESSION.admin
-		//script(src='/js/nogmkicker.js')
+	if !SESSION.admin
+		script.
+			if (location.search=='?server=1') {
+			alert("권한이 없습니다.")
+			location.href="https://kkutu.org"
+			}
 
 block JS
 	script(type='text/javascript', src='/js/in_game_kkutu.min.js')
