@@ -66,12 +66,12 @@ Server.set('view engine', "pug");
 Server.use(Express.static(__dirname + "/public"));
 Server.use(Parser.urlencoded({ extended: true }));
 Server.use(Exession({
-	/* use only for redis-installed
+	// use only for redis-installed
 
 	store: new Redission({
 		client: Redis.createClient(),
 		ttl: 3600 * 12
-	}),*/
+	}),
 	secret: 'kkutu',
 	resave: false,
 	saveUninitialized: true
@@ -100,22 +100,28 @@ Server.use((req, res, next) => {
 //볕뉘 수정 끝
 // use this if you want
 
-DDDoS = new DDDoS({
-	maxWeight: 30,
-	checkInterval: 10000,
-	rules: [{
-		regexp: "^/(cf|dict|gwalli)",
-		maxWeight: 30,
-		errorData: "429 Too Many Requests"
-	}, {
-		regexp: ".*",
-		errorData: "429 Too Many Requests"
-	}]
-});
-DDDoS.rules[0].logFunction = DDDoS.rules[1].logFunction = function(ip, path){
-	JLog.warn(`DoS from IP ${ip} on ${path}`);
-};
-Server.use(DDDoS.express());
+// DDDoS = new DDDoS({
+	// maxWeight: 30,
+	// checkInterval: 10000,
+	// rules: [{
+		// regexp: "^/(cf|dict|gwalli)",
+		// maxWeight: 30,
+		// errorData: "429 Too Many Requests"
+	// }, {
+		// regexp: ".*",
+		// errorData: "429 Too Many Requests"
+	// }]
+// });
+// DDDoS.rules[0].logFunction = DDDoS.rules[1].logFunction = function(ip, path){
+	// JLog.warn(`DoS from IP ${ip} on ${path}`);
+// };
+// Server.use(DDDoS.express());
+
+var Ddos = require('ddos')
+var express = require('express')
+var ddos = new Ddos;
+var app = express();
+Server.use(ddos.express)
 
 WebInit.init(Server, true);
 DB.ready = function(){
