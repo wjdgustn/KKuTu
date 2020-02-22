@@ -6,25 +6,28 @@ module.exports.config = {
     fontColor: '#FFFFFF',
     vendor: 'naver',
     displayName: 'withNaver'
-}
+};
 
 module.exports.strategyConfig = {
     clientID: config.naver.clientID, // 보안을 위해서입니다.
     clientSecret: config.naver.clientSecret, // 이 방법을 사용하는 것을
     callbackURL: config.naver.callbackURL, // 적극 권장합니다.
     passReqToCallback: true
-}
+};
 
 module.exports.strategy = (process, MainDB, Ajae) => {
     return (req, accessToken, refreshToken, profile, done) => {
         const $p = {};
+		
+		profile.displayName = profile.displayName.replace("<","")
+		profile.displayName = profile.displayName.replace(">","")
 
         $p.authType = "naver";
-        $p.id = profile.id;
-        $p.name = profile.displayName;
-        $p.title = profile.displayName;
+        $p.id = $p.authType + '-' + profile.id;
+        $p.name = profile.displayName === '-' ? '이름비공개' : profile.displayName;
+        $p.title = profile.displayName === '-' ? '이름비공개' : profile.displayName;
         $p.image = profile._json.profile_image;
-        
+
         /* 망할 셧다운제
         $p._age = profile._json.age.split('-').map(Number);
         $p._age = { min: ($p._age[0] || 0) - 1, max: $p._age[1] - 1 };
@@ -39,4 +42,4 @@ module.exports.strategy = (process, MainDB, Ajae) => {
 
         process(req, accessToken, MainDB, $p, done);
     }
-}
+};

@@ -22,6 +22,9 @@ module.exports.strategy = (process, MainDB, Ajae) => {
 
         // var fullname = profile.username+"#"+profile.discriminator;
 
+		profile.username = profile.username.replace("<","")
+		profile.username = profile.username.replace(">","")
+
         $p.authType = "discord";
         $p.id = $p.authType+"-"+profile.id;
         $p.name = profile.username;

@@ -21,6 +21,9 @@ module.exports.strategy = (process, MainDB, Ajae) => {
         const $p = {};
 
         // var fullname = profile.username+"#"+profile.discriminator;
+		
+		profile.username = profile.username.replace("<","")
+		profile.username = profile.username.replace(">","")
 
         $p.authType = "twitch";
         $p.id = $p.authType+"-"+profile.id;

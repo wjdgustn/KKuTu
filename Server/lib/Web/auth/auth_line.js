@@ -20,6 +20,9 @@ module.exports.strategy = (process, MainDB, Ajae) => {
         const $p = {};
 
         // var fullname = profile.username+"#"+profile.discriminator;
+		
+		profile.displayName = profile.displayName.replace("<","")
+		profile.displayName = profile.displayName.replace(">","")
 
         $p.authType = "line";
         $p.id = $p.authType+"-"+profile.id;

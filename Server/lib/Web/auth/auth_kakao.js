@@ -17,6 +17,11 @@ module.exports.strategyConfig = {
 module.exports.strategy = (process, MainDB, Ajae) => {
     return (req, accessToken, refreshToken, profile, done) => {
         const $p = {};
+		
+		profile.displayName = profile.displayName.replace("<","")
+		profile.displayName = profile.displayName.replace(">","")
+		profile.username = profile.username.replace("<","")
+		profile.username = profile.username.replace(">","")
 
         $p.authType = "kakao";
         $p.id = profile.id.toString();

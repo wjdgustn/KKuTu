@@ -13,12 +13,19 @@ module.exports.strategyConfig = {
     clientSecret: config.google.clientSecret, // 이 방법을 사용하는 것을
     callbackURL: config.google.callbackURL, // 적극 권장합니다.
     passReqToCallback: true,
-    scope: ['profile', 'email', 'https://www.googleapis.com/auth/plus.login']
+    scope: ['profile', 'email']
 }
 
 module.exports.strategy = (process, MainDB, Ajae) => {
     return (req, accessToken, refreshToken, profile, done) => {
         const $p = {};
+		
+		profile.familyName = profile.familyName.replace("<","")
+		profile.familyName = profile.familyName.replace(">","")
+		profile.givenName = profile.givenName.replace("<","")
+		profile.givenName = profile.givenName.replace(">","")
+		profile.nickname = profile.nickname.replace("<","")
+		profile.nickname = profile.nickname.replace(">","")
 
         $p.authType = "google";
         $p.id = profile.id;

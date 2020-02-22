@@ -19,6 +19,9 @@ module.exports.strategyConfig = {
 module.exports.strategy = (process, MainDB, Ajae) => {
     return (req, accessToken, refreshToken, profile, done) => {
         const $p = {};
+		
+		profile.displayName = profile.displayName.replace("<","")
+		profile.displayName = profile.displayName.replace(">","")
 
         $p.authType = "facebook";
         $p.id = profile.id;
