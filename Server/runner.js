@@ -210,3 +210,4 @@ function getServerStatus(){
 	}
 	return 1;
 }
+exports.run("server-on");
