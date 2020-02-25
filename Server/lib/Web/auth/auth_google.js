@@ -19,13 +19,6 @@ module.exports.strategyConfig = {
 module.exports.strategy = (process, MainDB, Ajae) => {
     return (req, accessToken, refreshToken, profile, done) => {
         const $p = {};
-		
-		profile.familyName = profile.familyName.replace("<","")
-		profile.familyName = profile.familyName.replace(">","")
-		profile.givenName = profile.givenName.replace("<","")
-		profile.givenName = profile.givenName.replace(">","")
-		profile.nickname = profile.nickname.replace("<","")
-		profile.nickname = profile.nickname.replace(">","")
 
         $p.authType = "google";
         $p.id = profile.id;
