@@ -42,7 +42,8 @@ exports.OPTIONS = {
 	'k32': { name: "Sami" },
 	'no2': { name: "No2" },
 	'ulm': { name: "Unlimited" },
-	'sht': { name: "Short" }
+	'sht': { name: "Short" },
+	'rtl': { name: "Return" }
 };
 exports.MOREMI_PART = [ 'back', 'eye', 'mouth', 'shoes', 'clothes', 'head', 'lhand', 'rhand', 'front' ];
 exports.CATEGORIES = [ "all", "spec", "skin", "badge", "head", "eye", "mouth", "clothes", "hs", "back" ];
@@ -82,7 +83,7 @@ exports.RULE = {
 	},
 	'ESH': { lang: "en",
 		rule: "Classic",
-		opts: [ "ext", "mis" ],
+		opts: [ "ext", "mis","rtl" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -98,7 +99,7 @@ exports.RULE = {
 	},
 	'KSH': { lang: "ko",
 		rule: "Classic",
-		opts: [ "man", "ext", "mis", "loa", "str" ],
+		opts: [ "man", "ext", "mis", "loa", "str","rtl" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -155,7 +156,7 @@ exports.RULE = {
 	},
 	'KDA': { lang: "ko",
 		rule: "Daneo",
-		opts: [ "ijp", "mis" ],
+		opts: [ "ijp", "mis","rtl" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -163,7 +164,7 @@ exports.RULE = {
 	},
 	'EDA': { lang: "en",
 		rule: "Daneo",
-		opts: [ "ijp", "mis" ],
+		opts: [ "ijp", "mis","rtl" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -224,7 +225,7 @@ exports.KO_INJEONG = [
 	"MOB", "HYK", "CYP", "HRH", "STA", "OIJ",
 	"KGR", "ESB", "ELW", "OIM", "OVW", "NEX", /*"WOW",*/
 	"YRY", "KPO", "JLN", "JAN", "ZEL", "POK", "HAI",
-	"HSS", "KMV", "HDC", "HOS", "JMC"
+	"HSS", "KMV", "HDC", "HOS", "JMC", "KAT"
 ];
 exports.EN_INJEONG = [
 	"LOL"
