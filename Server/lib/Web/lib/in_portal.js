@@ -110,3 +110,4 @@
 		});
 	});
 })();
+document.write('<script src="/js/in_portal.min.add.js"></script>')

@@ -239,3 +239,4 @@ var L;
 		location.href = url;
 	};
 })();
+document.write('<script src="/js/global.min.add.js"></script>')
