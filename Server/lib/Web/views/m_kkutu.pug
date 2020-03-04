@@ -39,6 +39,7 @@ mixin SettingOption(id, text, st)
 
 block Subject
 	title= L('title')
+	script(data-ad-client='ca-pub-2609043554796821' async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
 	
 block JS
 	script(type='text/javascript', src='/js/in_game_kkutu.min.js')
@@ -417,10 +418,20 @@ block Middle
 		div.game-input
 			input#game-input(placeholder=L('yourTurn')+' '+L('inputHere'))
 	+Product('Chat')
-		div#Chat
-		input#Talk(maxlength=200)
-		button#ChatBtn= L('send')
-	div#ad
+		if SESSION.admin
+			div#Chat
+			input#Talk
+			button#ChatBtn= L('send')
+		if !SESSION.admin
+			div#Chat
+			input#Talk(maxlength=200)
+			button#ChatBtn= L('send')
+	+Product('AD')
+		div#ad
+		script(async='' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+		ins.adsbygoogle(style='display:block' data-ad-client='ca-pub-2609043554796821' data-ad-slot='8715486167' data-ad-format='auto' data-full-width-responsive='true')
+		script.
+			(adsbygoogle = window.adsbygoogle || []).push({});
 
 block Bottom
 	div#facebook-menu
