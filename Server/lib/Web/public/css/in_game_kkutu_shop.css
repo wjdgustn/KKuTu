@@ -75,3 +75,16 @@
 .x-indigo_name{ color: #1C18B9; }
 .x-purple_name{ color: #A939CC; }
 .x-pink_name{ color: #F15F9A; }
+.x-rainbow_name {
+    font-weight: bold;
+    background: linear-gradient(to right, violet, #FF9364, yellow, lightgreen, lightblue, palevioletred, violet, #FF9364, yellow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: an 6s linear infinite;
+    background-size: 400% 100%;
+}
+@keyframes an {
+    0% { background-position: 0 0; }
+	100% { background-position: 100% 0; }
+}
