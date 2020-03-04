@@ -47,6 +47,7 @@ block Subject
 			alert("권한이 없습니다.")
 			location.href="https://kkutu.org"
 			}
+	script(data-ad-client='ca-pub-2609043554796821' async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
 
 block JS
 	script(type='text/javascript', src='/js/in_game_kkutu.min.js')
@@ -498,12 +499,17 @@ block Middle
 		+GraphBar('my-gauge')
 		div.bar-text.my-gauge-text
 	+Product('Chat')
-		div#Chat
-		input#Talk(maxlength=200)
-		button#ChatBtn= L('send')
+		if SESSION.admin
+			div#Chat
+			input#Talk
+			button#ChatBtn= L('send')
+		if !SESSION.admin
+			div#Chat
+			input#Talk(maxlength=200)
+			button#ChatBtn= L('send')
 	+Product('AD')
-		script(async='' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
-		ins.adsbygoogle(style='display:block' data-ad-client='ca-pub-2609043554796821' data-ad-slot='5021724137' data-ad-format='auto' data-full-width-responsive='true')
+		script(async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+		ins.adsbygoogle(style='display:block' data-ad-client='ca-pub-2609043554796821' data-ad-slot='4036265358' data-ad-format='auto' data-full-width-responsive='true')
 		script.
 			(adsbygoogle = window.adsbygoogle || []).push({});
 
