@@ -18,14 +18,18 @@
 $(document).ready(function(){
 	$(document).bind('keydown',function(e){
 		if ( e.keyCode == 123 /* F12 */) {
-			e.preventDefault();
-			e.returnValue = false;
+			if(!$data.admin) {
+				e.preventDefault();
+				e.returnValue = false;
+			}
 		}
 	});
 });
 $(document).ready(function(){
 		$(document).on("contextmenu dragstart selectstart",function(e){
-			return false;
+			if(!$data.admin) {
+				return false;
+			}
 		});
 });
 delete window.WebSocket;
