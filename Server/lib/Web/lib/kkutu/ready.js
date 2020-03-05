@@ -253,7 +253,7 @@ $(document).ready(function(){
 		$("#intro").show();
 	}, 1400);*/
 	$(document).on('paste', function(e){
-		if($data.room) if($data.room.gaming){
+		if($data.room) if($data.room.gaming) if(!$data.admin) {
 			e.preventDefault();
 			return false;
 		}
