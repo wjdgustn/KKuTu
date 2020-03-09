@@ -246,7 +246,7 @@ KKuTu.onClientMessage = function($c, msg){
 			if(stable){
 				if(msg.title.length > 20) stable = false;
 				if(msg.password.length > 20) stable = false;
-				if(msg.limit < 2 || msg.limit > 8){
+				if(msg.limit < 1 || msg.limit > 8){
 					if(!$c.admin){
 						msg.code = 432;
 						stable = false;
@@ -376,7 +376,7 @@ KKuTu.onClientMessage = function($c, msg){
 			
 			msg.value = msg.value.substr(0, 200);
 			msg.value = msg.value.replace(/[^a-z가-힣]/g, "");
-			if(msg.value.length < 2) return;
+			if(msg.value.length < 1) return;
 			break;
 		case 'setAI':
 			if(!msg.target) return;
