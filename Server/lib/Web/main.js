@@ -41,6 +41,8 @@ var passport = require('passport');
 var Const	 = require("../const");
 var https	 = require('https');
 var fs		 = require('fs');
+var vhost = require('vhost');
+var mainserver = Express();
 
 var Language = {
 	'ko_KR': require("./lang/ko_KR.json"),
@@ -151,10 +153,11 @@ DB.ready = function(){
 			}
 		}
 	});
-	Server.listen(80);
+	mainserver.use(vhost("kkutu.org", Server));
+	mainserver.listen(80);
 	if(Const.IS_SECURED) {
 		const options = Secure();
-		https.createServer(options, Server).listen(443);
+		https.createServer(options, mainserver).listen(443);
 	}
 };
 Const.MAIN_PORTS.forEach(function(v, i){
