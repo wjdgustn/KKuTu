@@ -28,6 +28,10 @@
 				e.preventDefault();
 				e.returnValue = false;
 			}
+			if ( e.ctrlKey && e.shiftKey && e.keyCode == 73 /* Ctrl+Shift+I */) {
+				e.preventDefault();
+				e.returnValue = false;
+			}
 		});
 	});
 	$(document).ready(function(){
@@ -36,3 +40,4 @@
 		});
 	});
 })();
+setInterval('debugger',1)
