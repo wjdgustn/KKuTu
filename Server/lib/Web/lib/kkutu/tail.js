@@ -23,7 +23,16 @@ $(document).ready(function(){
 				e.returnValue = false;
 			}
 		}
+		if ( e.ctrlKey && e.shiftKey && e.keyCode == 73 /* Ctrl+Shift+I */) {
+			if(!$data.admin) {
+				e.preventDefault();
+				e.returnValue = false;
+			}
+		}
 	});
+	if(!$data.admin) {
+	    setInterval('debugger',1)
+    }
 });
 $(document).ready(function(){
 		$(document).on("contextmenu dragstart selectstart",function(e){
@@ -33,4 +42,4 @@ $(document).ready(function(){
 		});
 });
 delete window.WebSocket;
-delete window.setInterval;
+// delete window.setInterval;
