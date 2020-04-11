@@ -796,7 +796,7 @@ exports.Room = function(room, channel){
 	my.id = room.id || _rid;
 	my.channel = channel;
 	my.opts = {};
-	/*my.title = room.title;
+	my.title = room.title;
 	my.password = room.password;
 	my.limit = Math.round(room.limit);
 	my.mode = room.mode;
@@ -808,8 +808,9 @@ exports.Room = function(room, channel){
 		extend: room.opts.injeong,
 		mission: room.opts.mission,
 		loanword: room.opts.loanword,
+		randomturn: room.opts.randomturn,
 		injpick: room.opts.injpick || []
-	};*/
+	};
 	my.master = null;
 	my.tail = [];
 	my.players = [];
@@ -1310,7 +1311,14 @@ exports.Room = function(room, channel){
 		if(!my.gaming) return;
 		if(!my.game.seq) return;
 		
-		my.game.turn = (my.game.turn + 1) % my.game.seq.length;
+		// my.game.turn = (my.game.turn + 1) % my.game.seq.length;
+		let $room = ROOM[my.place];
+		if(my.opts.randomturn) {
+		    my.game.turn = (my.game.turn + Math.floor(Math.random()*(my.game.seq.length-2+1)) + 1) % my.game.seq.length;
+		}
+		else {
+		    my.game.turn = (my.game.turn + 1) % my.game.seq.length;
+		}
 		my.turnStart(force);
 	};
 	my.turnEnd = function(){
