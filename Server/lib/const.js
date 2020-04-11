@@ -28,7 +28,7 @@ exports.BLOCKED_LENGTH = 10000;
 exports.KICK_BY_SPAM = 9;
 exports.MAX_OBSERVER = 4;
 exports.TESTER = GLOBAL.ADMIN.concat([
-	"discord-348009971037765633"
+	"naver-96636447"
 ]);
 exports.IS_SECURED = GLOBAL.IS_SECURED;
 exports.SSL_OPTIONS = GLOBAL.SSL_OPTIONS;
@@ -43,7 +43,8 @@ exports.OPTIONS = {
 	'no2': { name: "No2" },
 	'ulm': { name: "Unlimited" },
 	'sht': { name: "Short" },
-	'rtl': { name: "Return" }
+	'rtl': { name: "Return" },
+	'rdt': { name: "Randomturn" }
 };
 exports.MOREMI_PART = [ 'back', 'eye', 'mouth', 'shoes', 'clothes', 'head', 'lhand', 'rhand', 'front' ];
 exports.CATEGORIES = [ "all", "spec", "skin", "badge", "head", "eye", "mouth", "clothes", "hs", "back" ];
@@ -75,7 +76,7 @@ exports.RULE = {
 */
 	'EKT': { lang: "en",
 		rule: "Classic",
-		opts: [ "man", "ext", "mis" ],
+		opts: [ "man", "ext", "mis", "rdt" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -83,7 +84,7 @@ exports.RULE = {
 	},
 	'ESH': { lang: "en",
 		rule: "Classic",
-		opts: [ "ext", "mis","rtl" ],
+		opts: [ "ext", "mis","rtl", "rdt" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -91,7 +92,7 @@ exports.RULE = {
 	},
 	'KKT': { lang: "ko",
 		rule: "Classic",
-		opts: [ "man", "ext", "mis", "loa", "str", "k32" ],
+		opts: [ "man", "ext", "mis", "loa", "str", "k32", "rdt" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -99,7 +100,7 @@ exports.RULE = {
 	},
 	'KSH': { lang: "ko",
 		rule: "Classic",
-		opts: [ "man", "ext", "mis", "loa", "str","rtl" ],
+		opts: [ "man", "ext", "mis", "loa", "str","rtl", "rdt" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -139,7 +140,7 @@ exports.RULE = {
 	},
 	'KAP': { lang: "ko",
 		rule: "Classic",
-		opts: [ "man", "ext", "mis", "loa", "str" ],
+		opts: [ "man", "ext", "mis", "loa", "str", "rdt" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -148,7 +149,7 @@ exports.RULE = {
 	},
 	'HUN': { lang: "ko",
 		rule: "Hunmin",
-		opts: [ "ext", "mis", "loa", "str" ],
+		opts: [ "ext", "mis", "loa", "str", "rdt" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -156,7 +157,7 @@ exports.RULE = {
 	},
 	'KDA': { lang: "ko",
 		rule: "Daneo",
-		opts: [ "ijp", "mis","rtl" ],
+		opts: [ "ijp", "mis","rtl", "rdt" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -164,7 +165,7 @@ exports.RULE = {
 	},
 	'EDA': { lang: "en",
 		rule: "Daneo",
-		opts: [ "ijp", "mis","rtl" ],
+		opts: [ "ijp", "mis","rtl", "rdt" ],
 		time: 1,
 		ai: true,
 		big: false,
