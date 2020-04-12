@@ -353,6 +353,8 @@
 		"explReturn": "사용했던 단어를 다시 사용할 수 있습니다.",
 		"optRandomturn": "랜덤턴",
 		"explRandomturn": "턴을 순서대로 진행하지 않고, 랜덤으로 진행합니다.",
+		"optRandommission": "랜덤턴",
+		"explRandommission": "턴을 순서대로 진행하지 않고, 랜덤으로 진행합니다.",
 		"optSami": "3232",
 		"explSami": "세 글자 단어와 두 글자 단어를 번갈아가며 잇습니다.",
 		"optNo2": "2글자 금지",
