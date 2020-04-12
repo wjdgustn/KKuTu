@@ -158,7 +158,7 @@ exports.RULE = {
 	},
 	'KDA': { lang: "ko",
 		rule: "Daneo",
-		opts: [ "ijp", "mis","rtl", "rdt" ],
+		opts: [ "ijp", "mis","rtl", "rdt", "rdm" ],
 		time: 1,
 		ai: true,
 		big: false,
