@@ -22,6 +22,7 @@ var Const = require('../const');
 var Lizard = require('../sub/lizard');
 var JLog = require('../sub/jjlog');
 var GLOBAL = require("../sub/global.json");
+var admin = GLOBAL.ADMIN
 // 망할 셧다운제 var Ajae = require("../sub/ajae");
 var DB;
 var SHOP;
@@ -544,7 +545,7 @@ exports.Client = function(socket, profile, sid){
 					if($room.kicked.indexOf(my.id) != -1){
 						return my.sendError(406);
 					}
-					if($room.password != room.password && $room.password){
+					if($room.password != room.password && $room.password && admin.indexOf(my.id) == -1){
 						$room = undefined;
 						return my.sendError(403);
 					}
