@@ -49,7 +49,14 @@ exports.roundReady = function(){
 	if(my.game.round <= my.round){
 		my.game.theme = my.opts.injpick[Math.floor(Math.random() * ijl)];
 		my.game.chain = [];
-		if(my.opts.mission) my.game.mission = getMission(my.rule.lang);
+		if(my.opts.mission) {
+			if(my.opts.randommission && my.rule.lang == "ko") {
+				my.game.mission = String.fromCharCode( 44031 + Math.ceil( 11172 * Math.random() ) )
+			}
+			else {
+			    my.game.mission = getMission(my.rule.lang);
+			}
+		}
 		my.byMaster('roundReady', {
 			round: my.game.round,
 			theme: my.game.theme,
@@ -148,9 +155,14 @@ exports.submit = function(client, text, data){
 					bonus: (my.game.mission === true) ? score - my.getScore(text, t, true) : 0,
 					baby: $doc.baby
 				}, true);
-				if(my.game.mission === true){
-					my.game.mission = getMission(my.rule.lang);
-				}
+		        if(my.opts.mission) {
+			        if(my.opts.randommission) {
+		        		my.game.mission = String.fromCharCode( 44031 + Math.ceil( 11172 * Math.random() ) )
+		        	}
+		        	else {
+		        	    my.game.mission = getMission(my.rule.lang);
+		            }
+		        }
 				setTimeout(my.turnNext, my.game.turnTime / 6);
 				if(!client.robot){
 					client.invokeWordPiece(text, 1);
@@ -195,9 +207,14 @@ exports.submit = function(client, text, data){
 					bonus: 0,
 					baby: $doc.baby
 				}, true);
-				if(my.game.mission === true){
-					my.game.mission = getMission(my.rule.lang);
-				}
+		        if(my.opts.mission) {
+			        if(my.opts.randommission) {
+		        		my.game.mission = String.fromCharCode( 44031 + Math.ceil( 11172 * Math.random() ) )
+		        	}
+		        	else {
+		        	    my.game.mission = getMission(my.rule.lang);
+		        	}
+		        }
 				setTimeout(my.turnNext, my.game.turnTime / 6);
 				if(!client.robot){
 					client.invokeWordPiece(text, 1);
