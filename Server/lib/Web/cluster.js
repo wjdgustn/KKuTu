@@ -31,7 +31,6 @@ if(Cluster.isMaster){
 	Cluster.on('exit', function(w){
 		console.log(`Worker ${w.process.pid} died`);
 		Cluster.fork();
-		console.log(`new process started`);
 	});
 }else{
 	require("./main.js");
