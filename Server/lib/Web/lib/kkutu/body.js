@@ -973,7 +973,7 @@ function addonNickname($R, o){
 	if(o.equip['BDG'] == "b1_hyonsubot") $R.addClass("x-bot");
 	if(o.equip['BDG'] == "b1_together") $R.addClass("x-together");
 	if(o.equip['BDG'] == "b1_designer") $R.addClass("x-designer");
-	if(o.equip['BDG'] == "2020sul") $R.addClass("x-2020sul");
+	if(o.equip['BDG'] == "b1_2020sul") $R.addClass("x-2020sul");
 }
 function updateRoomList(refresh){
 	var i;
