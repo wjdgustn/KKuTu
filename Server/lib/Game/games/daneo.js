@@ -207,7 +207,7 @@ exports.submit = function(client, text, data){
 					bonus: 0,
 					baby: $doc.baby
 				}, true);
-		        if(my.opts.mission) {
+		        if(my.game.mission === true) {
 			        if(my.opts.randommission) {
 		        		my.game.mission = String.fromCharCode( 44031 + Math.ceil( 11172 * Math.random() ) )
 		        	}
