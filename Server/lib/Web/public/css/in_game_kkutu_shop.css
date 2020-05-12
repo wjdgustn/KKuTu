@@ -48,9 +48,9 @@
 .chat-item>.x-gm::before{ content: "[GM]"; color: #2F77D9; text-shadow: 0px 0px 2px #2AF; }
 .room-user-title>.x-gm::before{ content: "[GM]"; color: #2F77D9; text-shadow: 0px 0px 2px #2AF; }
 
-.x-yt .users-name::before{ content: "[YOUTUBE]"; color: #FF3333; text-shadow: 0px 0px 2px #2AF; }
-.chat-item>.x-yt::before{ content: "[YOUTUBE]"; color: #FF3333; text-shadow: 0px 0px 2px #2AF; }
-.room-user-title>.x-yt::before{ content: "[YOUTUBE]"; color: #FF3333; text-shadow: 0px 0px 2px #2AF; }
+.x-yt .users-name::before{ content: "[YT]"; color: #FF3333; text-shadow: 0px 0px 2px #2AF; }
+.chat-item>.x-yt::before{ content: "[YT]"; color: #FF3333; text-shadow: 0px 0px 2px #2AF; }
+.room-user-title>.x-yt::before{ content: "[YT]"; color: #FF3333; text-shadow: 0px 0px 2px #2AF; }
 
 .x-bot .users-name::before{ content: "[BOT]"; color: #43C227; text-shadow: 0px 0px 2px #2AF; }
 .chat-item>.x-bot::before{ content: "[BOT]"; color: #43C227; text-shadow: 0px 0px 2px #2AF; }
