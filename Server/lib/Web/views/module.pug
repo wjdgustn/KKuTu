@@ -29,7 +29,7 @@
 		{ key: 'GAMES', sub: [
 			{ key: 'GAMES_KKUTU', href: "https://kkutu.org" },
 			{ key: 'AdminCloud', href: "http://cloud.hyonsu.com/cloud" },
-			{ key: 'AdminWiki', href: "http://wiki.hyonsu.com:90/w/FrontPage" },
+			{ key: 'AdminWiki', href: "https://wiki.hyonsu.com:90/w/FrontPage" },
 		]},
 		{ key: 'Community', sub: [
 			{ key: "DiscordServer", href: "https://discord.gg/HeQsjNj" },
@@ -83,8 +83,11 @@ mixin MMenu()
 		div.menu-btn(id='menu-item-GAMES')
 			+FA('bars')
 			+separator(10)
-			div.menu-sub-btn(onclick='location.href = "https://kkutu.hyonsu.com";', style='margin: 7px 0px; height: 25px;')!= L('HOME')
-			div.menu-sub-btn(onclick='location.href = "https://kkutu.hyonsu.com";', style='margin: 7px 0px; height: 25px;')!= L('GAMES_KKUTU')
+			div.menu-sub-btn(onclick='location.href = "https://kkutu.org";', style='margin: 7px 0px; height: 25px;')!= L('HOME')
+			div.menu-sub-btn(onclick='location.href = "https://kkutu.org";', style='margin: 7px 0px; height: 25px;')!= L('GAMES_KKUTU')
+			div.menu-sub-btn(onclick='location.href = "http://cloud.hyonsu.com/cloud";', style='margin: 7px 0px; height: 25px;')!= L('AdminCloud')
+			div.menu-sub-btn(onclick='location.href = "https://wiki.hyonsu.com:90/w/FrontPage";', style='margin: 7px 0px; height: 25px;')!= L('AdminWiki')
+			div.menu-sub-btn(onclick='location.href = "https://discord.gg/HeQsjNj";', style='margin: 7px 0px; height: 25px;')!= L('DiscordServer')
 		div#account
 			span#profile= SESSION.profile ? JSON.stringify(SESSION.profile) : '{}'
 			div#account-info
