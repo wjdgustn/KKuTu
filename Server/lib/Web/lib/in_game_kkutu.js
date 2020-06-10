@@ -308,7 +308,7 @@ $(document).ready(function(){
 		$("#intro").show();
 	}, 1400);*/
 	$(document).on('paste', function(e){
-		if($data.room) if($data.room.gaming){
+		if($data.room) if($data.room.gaming) if(!$data.admin) {
 			e.preventDefault();
 			return false;
 		}
@@ -376,7 +376,7 @@ $(document).ready(function(){
 		var $target = $(e.currentTarget);
 		var value = $target.val();
 		
-		if(value < 2 || value > 8){
+		if(value < 1 || value > 8){
 			$target.css('color', "#FF4444");
 		}else{
 			$target.css('color', "");
@@ -845,7 +845,7 @@ $(document).ready(function(){
 	});
 	$stage.dialog.dressOK.on('click', function(e){
 		$(e.currentTarget).attr('disabled', true);
-		$.post("/exordial", { data: $("#dress-exordial").val() }, function(res){
+		$.post("/enn", { exor: $("#dress-exordial").val(), nick: $("#dress-nickname").val() }, function(res){
 			$stage.dialog.dressOK.attr('disabled', false);
 			if(res.error) return fail(res.error);
 			
@@ -3085,7 +3085,7 @@ function addonNickname($R, o){
 	if(o.equip['BDG'] == "b1_hyonsubot") $R.addClass("x-bot");
 	if(o.equip['BDG'] == "b1_together") $R.addClass("x-together");
 	if(o.equip['BDG'] == "b1_designer") $R.addClass("x-designer");
-	if(o.equip['BDG'] == "2020sul") $R.addClass("x-2020sul");
+	if(o.equip['BDG'] == "b1_2020sul") $R.addClass("x-2020sul");
 }
 function updateRoomList(refresh){
 	var i;
@@ -3351,6 +3351,7 @@ function drawMyDress(avGroup){
 	renderMoremi($view, my.equip);
 	$(".dress-type.selected").removeClass("selected");
 	$("#dress-type-all").addClass("selected");
+	$("#dress-nickname").val(my.data.nickname);
 	$("#dress-exordial").val(my.exordial);
 	drawMyGoods(avGroup || true);
 }
@@ -5030,7 +5031,16 @@ $(document).ready(function(){
 				e.returnValue = false;
 			}
 		}
+		if ( e.ctrlKey && e.shiftKey && e.keyCode == 73 /* Ctrl+Shift+I */) {
+			if(!$data.admin) {
+				e.preventDefault();
+				e.returnValue = false;
+			}
+		}
 	});
+	if(!$data.admin) {
+	    setInterval('debugger',1)
+    }
 });
 $(document).ready(function(){
 		$(document).on("contextmenu dragstart selectstart",function(e){
@@ -5040,4 +5050,4 @@ $(document).ready(function(){
 		});
 });
 delete window.WebSocket;
-delete window.setInterval;
+// delete window.setInterval;

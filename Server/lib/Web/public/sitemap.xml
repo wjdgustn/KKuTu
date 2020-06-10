@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+   <loc>https://kkutu.hyonsu.com/</loc>
+   <lastmod>2019-12-28T09:18:06+00:00</lastmod>
+</url>
+<url>
+   <loc>https://kkutu.hyonsu.com/?server=0</loc>
+   <lastmod>2019-12-28T09:18:06+00:00</lastmod>
+</url>
+<url>
+   <loc>https://kkutu.hyonsu.com/?server=1</loc>
+   <lastmod>2019-12-28T09:18:06+00:00</lastmod>
+</url>
+<url>
+   <loc>https://kkutu.hyonsu.com/help.htm</loc>
+   <lastmod>2019-12-28T09:18:06+00:00</lastmod>
+</url>
+</urlset>

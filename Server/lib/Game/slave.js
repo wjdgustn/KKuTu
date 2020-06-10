@@ -358,7 +358,7 @@ KKuTu.onClientMessage = function($c, msg){
 			$c.kickVote($c, msg.agree);
 			break;
 		case 'handover':
-			if(!DIC[msg.target]) return;
+		    if(!DIC[msg.target]) return;
 			if(!(temp = ROOM[$c.place])) return;
 			if(temp.gaming) return;
 			if($c.place != DIC[msg.target].place) return;

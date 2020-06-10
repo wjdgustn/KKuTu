@@ -1,0 +1,4 @@
+<script src="/ip.js"></script>
+<script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+자바스크립트 IP 변수명 : ip
