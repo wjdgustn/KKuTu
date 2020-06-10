@@ -5,5 +5,12 @@ Server/lib/node_modules
 Server/lib/Web/public/js/**
 !Server/lib/Web/public/js/jquery.js
 Server/lib/sub/auth.json
+Server/lib/sub/auth-for_save.json
 Server/lib/sub/global.json
+Server/lib/sub/global.inc - 복사본.json
+Server/lib/sub/ipban.json
 .vscode
+KKUTU_ERROR.log
+Server/lib/data/log
+Server/lib/data/kkutuhot.json
+Server/lib/Web/public/img
