@@ -119,11 +119,13 @@ Server.use((req, res, next) => {
 // };
 // Server.use(DDDoS.express());
 
-var Ddos = require('ddos')
-var express = require('express')
-var ddos = new Ddos;
-var app = express();
-Server.use(ddos.express)
+// other ddos protect
+
+// var Ddos = require('ddos');
+// var express = require('express');
+// var ddos = new Ddos;
+// var app = express();
+// Server.use(ddos.express);
 
 WebInit.init(Server, true);
 DB.ready = function(){
