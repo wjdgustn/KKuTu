@@ -156,6 +156,7 @@ DB.ready = function(){
 		}
 	});
 	mainserver.use(vhost("kkutu.org", Server));
+	mainserver.use(vhost("www.hyonsu.com", Server));
 	mainserver.listen(80);
 	if(Const.IS_SECURED) {
 		const options = Secure();
