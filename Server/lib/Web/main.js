@@ -160,7 +160,7 @@ DB.ready = function(){
 	mainserver.listen(80);
 	if(Const.IS_SECURED) {
 		const options = Secure();
-		https.createServer(options, mainserver).listen(443);
+		https.createServer(options, mainserver).listen(442);
 	}
 };
 Const.MAIN_PORTS.forEach(function(v, i){
