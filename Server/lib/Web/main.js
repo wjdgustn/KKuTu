@@ -87,18 +87,18 @@ Server.use((req, res, next) => {
 	}
 	next();
 });
-Server.use((req, res, next) => {
-	if(Const.IS_SECURED) {
-		if(req.protocol == 'http') {
-			let url = 'https://'+req.get('host')+req.path;
-			res.status(302).redirect(url);
-		} else {
-			next();
-		}
-	} else {
-		next();
-	}
-});
+// Server.use((req, res, next) => {
+// 	if(Const.IS_SECURED) {
+// 		if(req.protocol == 'http') {
+// 			let url = 'https://'+req.get('host')+req.path;
+// 			res.status(302).redirect(url);
+// 		} else {
+// 			next();
+// 		}
+// 	} else {
+// 		next();
+// 	}
+// });
 //볕뉘 수정 끝
 // use this if you want
 
@@ -157,10 +157,12 @@ DB.ready = function(){
 	});
 	mainserver.use(vhost("kkutu.org", Server));
 	mainserver.use(vhost("www.hyonsu.com", Server));
-	mainserver.listen(80);
 	if(Const.IS_SECURED) {
 		const options = Secure();
 		https.createServer(options, mainserver).listen(442);
+	}
+	else {
+		mainserver.listen(80);
 	}
 };
 Const.MAIN_PORTS.forEach(function(v, i){
