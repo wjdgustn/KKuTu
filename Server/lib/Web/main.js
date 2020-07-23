@@ -162,7 +162,7 @@ DB.ready = function(){
 		https.createServer(options, mainserver).listen(442);
 	}
 	else {
-		mainserver.listen(80);
+		mainserver.listen(442);
 	}
 };
 Const.MAIN_PORTS.forEach(function(v, i){
